@@ -1,1 +1,1 @@
-const response = require('./responses/responses');
+const response = require('./responses/responses.js');

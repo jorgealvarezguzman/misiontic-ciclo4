@@ -1,4 +1,4 @@
-const response = require('./responses/responses');
+const response = require('./responses/responses.js');
 
 exports.getUsers = (req, res)=>{
   try {

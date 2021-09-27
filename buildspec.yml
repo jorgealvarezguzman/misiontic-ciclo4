@@ -31,5 +31,6 @@ artifacts:
     - package-lock.json
     - src/config/*
     - src/controllers/*
+    - src/controllers/responses/*
     - src/models/*
     - src/routes/*
