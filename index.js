@@ -41,7 +41,7 @@ app.use(logger.middleware);
 app.get("/", (req, res) => {
   res.json({
     status: true,
-    messsage: "Service running...!",
+    messsage: "Service running...",
   });
 });
 
