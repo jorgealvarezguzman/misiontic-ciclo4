@@ -1,11 +1,8 @@
-import Message from "../../models/Message";
+import Project from "../../models/Project";
 
 const Query = {
-    ping() {
-        return "pong!"
-    },
-    messages: async () => {
-        return await Message.find()
+    projects: async () => {
+        return await Project.find()
     }
 }
 

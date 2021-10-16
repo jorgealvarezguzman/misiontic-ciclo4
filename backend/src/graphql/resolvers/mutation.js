@@ -1,10 +1,17 @@
-import Message from "../../models/Message";
+import Project from "../../models/Project";
 
 const Mutation = {
 
-    createMessage : async (_, {title,content,author}) => {
-        const newMessage = new Message({title,content,author});
-        return await newMessage.save();
+    createProject : async ( _, {
+        nombre,descripcion,objetivo_general, objetivos_especificos, presupuesto,
+        fecha_fin, estado, usuarios, observaciones
+    }) => {
+        const newProject = new Project({
+            nombre,descripcion,objetivo_general, objetivos_especificos, presupuesto,
+            fecha_fin, estado, usuarios, observaciones
+        });
+        
+        return await newProject.save();
     }
 };
 

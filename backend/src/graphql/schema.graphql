@@ -1,17 +1,58 @@
 type Query {
-    ping: String!
-    messages: [Message!]
+    projects: [Project!]
 }
 
 type Mutation {
-    createMessage(title:String!, content:String!, author:String!): Message
+    createProject(nombre:String!, descripcion:String!, objetivo_general:String!
+    objetivos_especificos: [String], presupuesto: Float,
+    fecha_inicio:String, fecha_fin:String, estado:String!, usuarios:[ProjectUserInput], 
+    observaciones: [ObservationAuthorInput]): Project
 }
 
-type Message {
+type Project {
     _id: ID!
-    title: String!
-    content: String!
-    author: String!
+    nombre: String!
+    descripcion: String
+    objetivo_general: String!
+    objetivos_especificos: [String]
+    presupuesto: Float!
+    fecha_inicio: String
+    fecha_fin: String
+    estado: String!
+    usuarios: [ProjectUser]
+    observaciones: [ObservationAuthor]
+}
+
+type ProjectUser {
+    userId: ID!
+    nombre: String!
+    fecha_ingreso: String
+    fecha_salida: String
+    rol: String
+    horas: Int
+    carrera: String
+}
+
+input ProjectUserInput {
+    userId: ID!
+    nombre: String!
+    fecha_ingreso: String
+    fecha_salida: String
+    rol: String
+    horas: Int
+    carrera: String
+}
+
+type ObservationAuthor {
+    autorId: ID!
+    texto: String!
+    fecha: String!
+}
+
+input ObservationAuthorInput {
+    autorId: ID!
+    texto: String!
+    fecha: String!
 }
 
 
