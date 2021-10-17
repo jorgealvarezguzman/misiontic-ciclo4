@@ -9,23 +9,23 @@ const projectSchema = mongoose.Schema({
   descripcion:{
     type: String,
   },
-  objetivo_general:{
+  obj_gen:{
     type: String,
     required: true,
   },
-  objetivos_especificos:{
+  obj_esp:{
     type: [String],
   },
   presupuesto:{
     type: Number,
     required: true,
   },
-  fecha_inicio:{
+  f_inicial:{
     type: Date,
     required: true,
     default: Date.now
   },
-  fecha_fin:{
+  f_final:{
     type: Date,
   },
   estado:{

@@ -3,11 +3,11 @@ import { gql } from 'apollo-boost'
 import { useMutation } from "@apollo/react-hooks";
 
 const CREATE_PROJECT = gql`
-    mutation createProject($nombre:String!, $descripcion:String!, $objetivo_general:String!,
-    $objetivos_especificos: [String], $presupuesto: Float, $fecha_inicio:String, 
-    $fecha_fin:String, $estado:String!, $usuarios:[ProjectUserInput], $observaciones: [ObservationAuthorInput]){
-        createProject(nombre:$nombre, descripcion:$descripcion,objetivo_general:$objetivo_general,
-            objetivos_especificos:$objetivos_especificos, presupuesto:$presupuesto, fecha_inicio:$fecha_inicio, fecha_fin:$fecha_fin, estado:$estado, usuarios:$usuarios, observaciones:$observaciones){
+    mutation createProject($nombre:String!, $descripcion:String!, $obj_gen:String!,
+    $obj_esp: [String], $presupuesto: Float, $f_inicial:String, 
+    $f_final:String, $estado:String!, $usuarios:[ProjectUserInput], $observaciones: [ObservationAuthorInput]){
+        createProject(nombre:$nombre, descripcion:$descripcion,obj_gen:$obj_gen,
+            obj_esp:$obj_esp, presupuesto:$presupuesto, f_inicial:$f_inicial, f_final:$f_final, estado:$estado, usuarios:$usuarios, observaciones:$observaciones){
             _id
             nombre
         }
@@ -18,8 +18,8 @@ const ProjectForm = () => {
 
     const [nombre, setNombre] = useState('')
     const [descripcion, setDescripcion] = useState('')
-    const [objetivo_general, setObjetivoGeneral] = useState('')
-    const [presupuesto, setPresupuesto] = useState(0)
+    const [obj_gen, setObjetivoGeneral] = useState('')
+    const [presupuesto, setPresupuesto] = useState()
     const [estado, setEstado] = useState('')
     const [createProject] = useMutation(CREATE_PROJECT)
 
@@ -30,7 +30,7 @@ const ProjectForm = () => {
                     <div className="card-body">
                         <form onSubmit={async e => {
                             e.preventDefault();
-                            await createProject({variables: {nombre, descripcion, objetivo_general, presupuesto, estado}})
+                            await createProject({variables: {nombre, descripcion, obj_gen, presupuesto, estado}})
                             window.location.href="/"
                         }}>
                             <div className="form-group mt-3">
@@ -42,7 +42,7 @@ const ProjectForm = () => {
                             </div>
 
                             <div className="form-group mt-3">
-                                <input type="text" placeholder="Objetivo General" className="form-control" onChange = {e => setObjetivoGeneral(e.target.value)} value = {objetivo_general} />
+                                <input type="text" placeholder="Objetivo General" className="form-control" onChange = {e => setObjetivoGeneral(e.target.value)} value = {obj_gen} />
                             </div>
 
                             <div className="form-group mt-3">

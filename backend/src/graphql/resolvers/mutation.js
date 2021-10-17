@@ -4,12 +4,12 @@ import User from "../../models/User";
 const Mutation = {
 
     createProject : async ( _, {
-        nombre,descripcion,objetivo_general, objetivos_especificos, presupuesto,
-        fecha_fin, estado, usuarios, observaciones
+        nombre,descripcion,obj_gen, obj_esp, presupuesto,
+        f_final, estado, usuarios, observaciones
     }) => {
         const newProject = new Project({
-            nombre,descripcion,objetivo_general, objetivos_especificos, presupuesto,
-            fecha_fin, estado, usuarios, observaciones
+            nombre,descripcion,obj_gen, obj_esp, presupuesto,
+            f_final, estado, usuarios, observaciones
         });
         
         return await newProject.save();

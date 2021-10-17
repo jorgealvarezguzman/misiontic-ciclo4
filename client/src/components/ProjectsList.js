@@ -8,7 +8,7 @@ const GET_PROJECTS = gql `
             _id
             nombre
             descripcion
-            objetivo_general
+            obj_gen
             estado
         }
     }
@@ -22,14 +22,14 @@ const ProjectList = () => {
         <div className="row">
             <div className="col-md-6 offset-md-3" style={{cursor:"pointer"}}>
                 {
-                    data.projects.map(({_id, nombre, descripcion, objetivo_general, estado}) => (
+                    data.projects.map(({_id, nombre, descripcion, obj_gen, estado}) => (
                         <div key={_id} className="card m-2"> 
                             <h4> {nombre} </h4>
                             <div class="container">
                                 <p> Descripción: {descripcion} </p>
                             </div>
                             <div class="container">
-                                <p> Objectivo General: {objetivo_general} </p>
+                                <p> Objectivo General: {obj_gen} </p>
                             </div>
                             <div class="container">
                                 <p> Estado: {estado} </p>
