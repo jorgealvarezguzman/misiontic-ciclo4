@@ -1,5 +1,6 @@
 type Query {
     projects: [Project!]
+    users: [User!]
 }
 
 type Mutation {
@@ -7,6 +8,17 @@ type Mutation {
     objetivos_especificos: [String], presupuesto: Float,
     fecha_inicio:String, fecha_fin:String, estado:String!, usuarios:[ProjectUserInput], 
     observaciones: [ObservationAuthorInput]): Project
+
+    createUser(nombre:String!, email:String!, password:String!, celular:String, carrera:String) : User
+}
+
+type User {
+   _id: ID!
+   nombre: String!
+   email: String!
+   celular: String
+   carrera: String
+   proyectos: [ID] 
 }
 
 type Project {

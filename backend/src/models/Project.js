@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-import {obsevationAuthor} from './submodels/Model'
+import { projectUserSchema, obsevationAuthor } from "./submodels/Model";
 
 const projectSchema = mongoose.Schema({
   nombre: {
@@ -32,15 +32,9 @@ const projectSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  usuarios:{
-    type: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'ProjectUser'
-    }],
-  },
-  observaciones:{
-    type:  [obsevationAuthor]
-  }
+  usuarios: [projectUserSchema] ,
+  observaciones: [obsevationAuthor]
 })
+
 
 export default mongoose.model('Project', projectSchema);

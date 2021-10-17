@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const projectUserSchema = mongoose.Schema({
+export const projectUserSchema = mongoose.Schema({
   userId:{
     type:mongoose.Schema.Types.ObjectId,
     required: true
@@ -27,28 +27,6 @@ const projectUserSchema = mongoose.Schema({
   }
 });
 
-const projectObservationSchema = mongoose.Schema({
-  nombre: {
-    type: String,
-    required: true,
-  },
-  fecha_ingreso:{
-    type: Date,
-    required: true,
-  },
-  fecha_salida:{
-    type: Date,
-  },
-  rol:{
-    type: String
-  },
-  horas:{
-    type:Number
-  },
-  carrera:{
-    type:String
-  }
-})
 
 export const obsevationAuthor = mongoose.Schema({
   autorId: {
@@ -60,12 +38,5 @@ export const obsevationAuthor = mongoose.Schema({
   },
   fecha: {
     type: Date,
-    default: Date.now
   },
 })
-
-const ProjectUser = mongoose.model('ProjectUser', projectUserSchema);
-const ProjectObservation = mongoose.model('ProjectObservation', projectObservationSchema);
-const ObservationAuthor = mongoose.model('ObservationAuthor', obsevationAuthor);
-
-module.exports = {ProjectUser, ProjectObservation, ObservationAuthor}
