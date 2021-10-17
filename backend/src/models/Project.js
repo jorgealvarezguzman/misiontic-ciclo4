@@ -34,7 +34,7 @@ const projectSchema = mongoose.Schema({
   },
   usuarios: [projectUserSchema] ,
   observaciones: [obsevationAuthor]
-})
+}, {collection: 'Proyectos'})
 
 
 export default mongoose.model('Project', projectSchema);

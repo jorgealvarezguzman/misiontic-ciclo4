@@ -2,37 +2,41 @@ import React from 'react';
 import {gql} from 'apollo-boost'
 import {useQuery} from "@apollo/react-hooks"
 
-const GET_PROJECTS = gql `
+const GET_USERS = gql `
     {
-        projects{
+        users{
             _id
             nombre
-            descripcion
-            objetivo_general
-            estado
+            email
+            celular
+            carrera
+            proyectos
         }
     }
 `;
 
 const ProjectList = () => {
-    const {loading, error, data } = useQuery(GET_PROJECTS)
-    if(loading) return <p> Cargando proyectos... </p>
+    const {loading, error, data } = useQuery(GET_USERS)
+    if(loading) return <p> Cargando lista de usuarios... </p>
     if(error) return <p> {error.message} </p>
     return (
         <div className="row">
-            <div className="col-md-6 offset-md-3" style={{cursor:"pointer"}}>
+            <div className="col-md-6 offset-md-3">
                 {
-                    data.projects.map(({_id, nombre, descripcion, objetivo_general, estado}) => (
+                    data.users.map(({_id, nombre, email, celular, carrera, proyectos}) => (
                         <div key={_id} className="card m-2"> 
                             <h4> {nombre} </h4>
                             <div class="container">
-                                <p> Descripción: {descripcion} </p>
+                                <p > Correo: {email} </p>
                             </div>
                             <div class="container">
-                                <p> Objectivo General: {objetivo_general} </p>
+                                <p> Celular: {celular} </p>
                             </div>
                             <div class="container">
-                                <p> Estado: {estado} </p>
+                                <p> Carrera: {carrera} </p>
+                            </div>
+                            <div class="container">
+                                <p> Proyectos: {proyectos} </p>
                             </div>
                         </div>
                     ))
