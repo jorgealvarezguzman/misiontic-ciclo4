@@ -11,7 +11,7 @@ export const projectUserSchema = mongoose.Schema({
   },
   f_ingreso:{
     type: Date,
-    required: true,
+    default: Date.now
   },
   f_salida:{
     type: Date,

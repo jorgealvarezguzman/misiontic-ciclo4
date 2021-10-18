@@ -9,12 +9,10 @@ const Query = {
         return await User.find();
     },
     get_project: async(_, {projectID}) => {
-        const projectFinded = await Project.findById(projectID);
-        return projectFinded;
+        return await Project.findById(projectID);
     },
     get_user: async(_, {userID}) => {
-        const userFinded = await User.findById(userID);
-        return userFinded;
+        return await User.findById(userID);
     }
 }
 

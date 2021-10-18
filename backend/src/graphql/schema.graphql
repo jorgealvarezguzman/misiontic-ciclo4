@@ -12,6 +12,18 @@ type Mutation {
     observaciones: [ObservationAuthorInput]): Project
 
     createUser(nombre:String!, email:String!, password:String!, celular:String, carrera:String) : User
+
+    editProject(_id:ID!,nombre:String, descripcion:String, obj_gen:String
+    obj_esp: [String], presupuesto: Float,
+    f_inicial:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
+    observaciones: [ObservationAuthorInput]): Project
+
+    deleteProject(projectID: ID!) : Project!
+
+    editUser(_id: ID!,nombre:String, email:String, celular:String, carrera:String) : User!
+
+    deleteUser(userID: ID!) : User!
+
 }
 
 type User {
