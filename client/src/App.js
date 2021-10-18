@@ -3,6 +3,7 @@ import ProjectList from "./components/ProjectsList";
 import ProjectForm from "./components/ProjectForm";
 import UserForm from "./components/UserForm";
 import UserList from "./components/UserList";
+import ProjectView from "./components/ProjectView";
 import {Navigation} from "./components/Navbar";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/new-project" component={ProjectForm} />
         <Route exact path="/users" component={UserList} /> 
         <Route exact path="/new-user" component={UserForm} />
+        <Route exact path="/projects/:projectId" component={(props)=> <ProjectView {...props}/>}/>
       </Switch>
       </div>
     </Router>

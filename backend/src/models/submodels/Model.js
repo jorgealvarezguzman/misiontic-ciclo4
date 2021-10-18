@@ -9,17 +9,17 @@ export const projectUserSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  fecha_ingreso:{
+  f_ingreso:{
     type: Date,
     required: true,
   },
-  fecha_salida:{
+  f_salida:{
     type: Date,
   },
   rol:{
     type: String
   },
-  horas:{
+  h_trabajo:{
     type:Number
   },
   carrera:{

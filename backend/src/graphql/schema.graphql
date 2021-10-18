@@ -1,6 +1,8 @@
 type Query {
     projects: [Project!]
     users: [User!]
+    get_project(projectID: ID!): Project!
+    get_user(userID: ID!) :User!
 }
 
 type Mutation {
@@ -36,12 +38,12 @@ type Project {
 }
 
 type ProjectUser {
-    userId: ID!
-    nombre: String!
-    fecha_ingreso: String
-    fecha_salida: String
+    userId: ID
+    nombre: String
+    f_ingreso: String
+    f_salida: String
     rol: String
-    horas: Int
+    h_trabajo: Int
     carrera: String
 }
 
