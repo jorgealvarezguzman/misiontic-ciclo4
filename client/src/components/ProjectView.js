@@ -1,6 +1,6 @@
 import React from 'react';
 import {gql} from 'apollo-boost'
-import {useQuery} from "@apollo/react-hooks"
+import {useQuery, useMutation} from "@apollo/react-hooks"
 
 const GET_PROJECT = gql `
     query get_project($projectID: ID!){
@@ -26,17 +26,25 @@ const GET_PROJECT = gql `
     }
 `;
 
+const DELETE_PROJECT = gql`
+    mutation deleteProject($projectID:ID!){
+        deleteProject(projectID:$projectID){
+            _id
+        }
+    }
+`;
+
 const Project = (props) => {
+    const [deleteProject] = useMutation(DELETE_PROJECT);
     const projectId = props.match.params.projectId;
     const {loading, error, data } = useQuery(GET_PROJECT, {variables:{projectID: projectId}})
     if(loading) return <p> Cargando proyecto... </p>
     if(error) return <p> {error} </p>
     const projectData = data.get_project;
-
     return (
         <div className="row">
             { <div className="col-md-6 offset-md-3">
-                <div key={projectData._Id} className="card m-2"> 
+                <div key={projectData._id} className="card m-2"> 
                     <h4> {projectData.nombre} </h4>
                     <div class="container">
                         <p> Descripción: {projectData.descripcion} </p>
@@ -84,9 +92,16 @@ const Project = (props) => {
                             })}
                         </ul>
                     </div>
-                    <button className="btn btn-warning" 
+                    <button className="btn btn-info" 
                         onClick={e => window.location.href=`/projects/${projectId}/edit`}> 
                         Editar 
+                    </button>
+                    <button className="btn btn-danger" 
+                        onClick={async(e) => {
+                            await deleteProject({variables: {projectID: projectData._id}})
+                            window.location.href=`/projects/`
+                        }}> 
+                        Borrar 
                     </button>
 
                 </div>
