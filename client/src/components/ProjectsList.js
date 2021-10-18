@@ -27,6 +27,7 @@ const ProjectList = () => {
             <div className="col-md-6 offset-md-3">
                 {
                     data.projects.map(({_id, nombre, descripcion, obj_gen, estado}) => (
+<<<<<<< HEAD
                         <div key={_id} className="card m-2" 
                             style={{cursor:"pointer"}}
                             onClick={e => window.location.href=`/projects/${_id}`}> 
@@ -40,6 +41,13 @@ const ProjectList = () => {
                             <div class="container">
                                 <p> Estado: {estado} </p>
                             </div>
+=======
+                        <div key={_id} className="card m-2"> 
+                            <h4> {nombre} </h4>
+                            <p> {descripcion} </p>
+                            <p> {obj_gen} </p>
+                            <p> {estado} </p>
+>>>>>>> development
                         </div>
                     ))
                 }

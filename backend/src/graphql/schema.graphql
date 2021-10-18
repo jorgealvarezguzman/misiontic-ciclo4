@@ -8,7 +8,11 @@ type Query {
 type Mutation {
     createProject(nombre:String!, descripcion:String!, obj_gen:String!
     obj_esp: [String], presupuesto: Float,
+<<<<<<< HEAD
     f_inicial:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
+=======
+    f_inicio:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
+>>>>>>> development
     observaciones: [ObservationAuthorInput]): Project
 
     createUser(nombre:String!, email:String!, password:String!, celular:String, carrera:String) : User
@@ -42,7 +46,11 @@ type Project {
     obj_gen: String!
     obj_esp: [String]
     presupuesto: Float!
+<<<<<<< HEAD
     f_inicial: String
+=======
+    f_inicio: String
+>>>>>>> development
     f_final: String
     estado: String!
     usuarios: [ProjectUser]
@@ -50,10 +58,17 @@ type Project {
 }
 
 type ProjectUser {
+<<<<<<< HEAD
     userId: ID
     nombre: String
     f_ingreso: String
     f_salida: String
+=======
+    userId: ID!
+    nombre: String!
+    f_ingreso: String
+    f_final: String
+>>>>>>> development
     rol: String
     h_trabajo: Int
     carrera: String

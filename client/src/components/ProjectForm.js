@@ -19,7 +19,11 @@ const ProjectForm = () => {
     const [nombre, setNombre] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [obj_gen, setObjetivoGeneral] = useState('')
+<<<<<<< HEAD
     const [presupuesto, setPresupuesto] = useState()
+=======
+    const [presupuesto, setPresupuesto] = useState(0)
+>>>>>>> development
     const [estado, setEstado] = useState('')
     const [createProject] = useMutation(CREATE_PROJECT)
 
