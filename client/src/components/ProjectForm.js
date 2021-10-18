@@ -2,14 +2,6 @@ import React, { useState } from 'react';
 import { gql } from 'apollo-boost'
 import { useMutation } from "@apollo/react-hooks";
 
-const CREATE_MESSAGE = gql`
-    mutation CreateMessage($title: String!, $content: String!, $author: String!){
-        createMessage(title: $title, content: $content, author: $author){
-            _id
-        }
-    }
-`;
-
 const CREATE_PROJECT = gql`
     mutation createProject($nombre:String!, $descripcion:String!, $obj_gen:String!,
     $obj_esp: [String], $presupuesto: Float, $f_inicial:String, 

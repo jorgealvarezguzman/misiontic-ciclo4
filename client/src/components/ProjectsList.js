@@ -16,8 +16,12 @@ const GET_PROJECTS = gql `
 
 const ProjectList = () => {
     const {loading, error, data } = useQuery(GET_PROJECTS)
-    if(loading) return <p> Cargando mensajes... </p>
+    if(loading) return <p> Cargando proyectos... </p>
     if(error) return <p> {error.message} </p>
+
+    const redirectToProject = async (id) =>{
+        
+    }
     return (
         <div className="row">
             <div className="col-md-6 offset-md-3">

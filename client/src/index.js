@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks';
-import "bootswatch/dist/lux/bootstrap.min.css"
+import "bootswatch/dist/lux/bootstrap.min.css" //Bootstrap con otros estilos
 
 const client = new ApolloClient({
   uri: 'http://localhost:3100/'

@@ -1,0 +1,29 @@
+[32minfo[39m: running {"timestamp":"2021-09-26T20:57:46.865Z"}
+[32minfo[39m: DB error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+    at NativeConnection.Connection.openUri (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\connection.js:684:11)
+    at C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:328:10
+    at C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose._promiseOrCallback (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:1149:10)
+    at Mongoose.connect (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:327:20)
+    at Object.<anonymous> (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\index.js:25:4)
+    at Module._compile (internal/modules/cjs/loader.js:1072:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10) {"timestamp":"2021-09-26T20:57:46.869Z"}
+[32minfo[39m: running {"timestamp":"2021-09-26T21:03:23.989Z"}
+[32minfo[39m: DB error: MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
+    at NativeConnection.Connection.openUri (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\connection.js:684:11)
+    at C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:328:10
+    at C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\helpers\promiseOrCallback.js:32:5
+    at new Promise (<anonymous>)
+    at promiseOrCallback (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\helpers\promiseOrCallback.js:31:10)
+    at Mongoose._promiseOrCallback (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:1149:10)
+    at Mongoose.connect (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\node_modules\mongoose\lib\index.js:327:20)
+    at Object.<anonymous> (C:\Users\jorgealfredo.alvarez\Documents\MisionTic\misiontic-ciclo4\index.js:25:4)
+    at Module._compile (internal/modules/cjs/loader.js:1072:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1101:10) {"timestamp":"2021-09-26T21:03:23.992Z"}
+[32minfo[39m: running {"timestamp":"2021-09-26T21:10:24.850Z"}
+[32minfo[39m: DB connected {"timestamp":"2021-09-26T21:10:26.888Z"}
+[32minfo[39m: GET / 200 {"timestamp":"2021-09-26T21:10:48.754Z"}
+[32minfo[39m: GET /favicon.ico 200 {"timestamp":"2021-09-26T21:10:48.812Z"}
+[32minfo[39m: GET / 200 {"timestamp":"2021-09-26T21:10:51.441Z"}

@@ -1,12 +1,38 @@
 type Query {
     projects: [Project!]
+    users: [User!]
+    get_project(projectID: ID!): Project!
+    get_user(userID: ID!) :User!
 }
 
 type Mutation {
     createProject(nombre:String!, descripcion:String!, obj_gen:String!
     obj_esp: [String], presupuesto: Float,
-    f_inicio:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
+    f_inicial:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
     observaciones: [ObservationAuthorInput]): Project
+
+    createUser(nombre:String!, email:String!, password:String!, celular:String, carrera:String) : User
+
+    editProject(_id:ID!,nombre:String, descripcion:String, obj_gen:String
+    obj_esp: [String], presupuesto: Float,
+    f_inicial:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
+    observaciones: [ObservationAuthorInput]): Project
+
+    deleteProject(projectID: ID!) : Project!
+
+    editUser(_id: ID!,nombre:String, email:String, celular:String, carrera:String) : User!
+
+    deleteUser(userID: ID!) : User!
+
+}
+
+type User {
+   _id: ID!
+   nombre: String!
+   email: String!
+   celular: String
+   carrera: String
+   proyectos: [ID] 
 }
 
 type Project {
@@ -16,7 +42,7 @@ type Project {
     obj_gen: String!
     obj_esp: [String]
     presupuesto: Float!
-    f_inicio: String
+    f_inicial: String
     f_final: String
     estado: String!
     usuarios: [ProjectUser]
