@@ -3,9 +3,9 @@ type Query {
 }
 
 type Mutation {
-    createProject(nombre:String!, descripcion:String!, objetivo_general:String!
-    objetivos_especificos: [String], presupuesto: Float,
-    fecha_inicio:String, fecha_fin:String, estado:String!, usuarios:[ProjectUserInput], 
+    createProject(nombre:String!, descripcion:String!, obj_gen:String!
+    obj_esp: [String], presupuesto: Float,
+    f_inicio:String, f_final:String, estado:String!, usuarios:[ProjectUserInput], 
     observaciones: [ObservationAuthorInput]): Project
 }
 
@@ -13,11 +13,11 @@ type Project {
     _id: ID!
     nombre: String!
     descripcion: String
-    objetivo_general: String!
-    objetivos_especificos: [String]
+    obj_gen: String!
+    obj_esp: [String]
     presupuesto: Float!
-    fecha_inicio: String
-    fecha_fin: String
+    f_inicio: String
+    f_final: String
     estado: String!
     usuarios: [ProjectUser]
     observaciones: [ObservationAuthor]
@@ -26,10 +26,10 @@ type Project {
 type ProjectUser {
     userId: ID!
     nombre: String!
-    fecha_ingreso: String
-    fecha_salida: String
+    f_ingreso: String
+    f_final: String
     rol: String
-    horas: Int
+    h_trabajo: Int
     carrera: String
 }
 

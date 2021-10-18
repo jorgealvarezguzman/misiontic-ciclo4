@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-import {obsevationAuthor} from './submodels/Model'
+import { projectUserSchema, obsevationAuthor } from "./submodels/Model";
 
 const projectSchema = mongoose.Schema({
   nombre: {
@@ -9,38 +9,32 @@ const projectSchema = mongoose.Schema({
   descripcion:{
     type: String,
   },
-  objetivo_general:{
+  obj_gen:{
     type: String,
     required: true,
   },
-  objetivos_especificos:{
+  obj_esp:{
     type: [String],
   },
   presupuesto:{
     type: Number,
     required: true,
   },
-  fecha_inicio:{
+  f_inicial:{
     type: Date,
     required: true,
     default: Date.now
   },
-  fecha_fin:{
+  f_final:{
     type: Date,
   },
   estado:{
     type: String,
     required: true,
   },
-  usuarios:{
-    type: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'ProjectUser'
-    }],
-  },
-  observaciones:{
-    type:  [obsevationAuthor]
-  }
-})
+  usuarios: [projectUserSchema] ,
+  observaciones: [obsevationAuthor]
+}, {collection: 'Proyectos'})
+
 
 export default mongoose.model('Project', projectSchema);
